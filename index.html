@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styl.css">
+    <title>KOCHAM CIĘ</title>
+</head>
+<body onload = "setInterval">
+    <h1>Daily reminder że kocham moją Kalincie</h1> <br> <br>
+    <h2 id="zegar"></h2> <br> <br>
+    <h2 id="text"></h2> <br> <br>
+    <div id="obrazkowy">
+       <img id="obrazek"><img id="obrazek2">
+    </div>
+    <script>
+        setInterval(function() {
+        var currentTime = new Date();
+        var day = currentTime.getDay();
+        var dni =["Niedziela","Poniedziałek","Wtorek","Środa","Czwartek","Piątek","Sobota"]
+        var hours = currentTime.getHours();
+        var minutes = currentTime.getMinutes();
+        var seconds = currentTime.getSeconds();
+
+        if (minutes<10){
+            minutes = "0" + minutes;
+        }
+
+        if (seconds<10){
+            seconds = "0" + seconds;
+        }
+
+        if(day == 0){
+        document.getElementById("obrazek").src = "niedziela.png";
+        document.getElementById("obrazek2").src = "niedziela2.png";
+        }else if(day == 1){
+        document.getElementById("obrazek").src = "poniedzialek.png";
+        document.getElementById("obrazek2").src = "poniedzialek2.png";
+        }else if(day == 2){
+        document.getElementById("obrazek").src = "wtorek.png";
+        document.getElementById("obrazek2").src = "wtorek2.png";
+        }else if(day == 3){
+        document.getElementById("obrazek").src = "sroda.png";
+        document.getElementById("obrazek2").src = "sroda2.png";
+        }else if(day == 4){
+        document.getElementById("obrazek").src = "czwartek.png";
+        document.getElementById("obrazek2").src = "czwartek2.png";
+        }else if(day == 5){
+        document.getElementById("obrazek").src = "piatek.png";
+        document.getElementById("obrazek2").src = "piatek2.png";
+        }else if(day == 6){
+        document.getElementById("obrazek").src = "sobota.png";
+        document.getElementById("obrazek2").src = "sobota2.png";
+        }
+
+        if(day === 0 && hours >= 0 && hours < 12) {
+        document.getElementById("text").innerHTML = "Jak to widzisz to wiedz że Cie bardzo kocham !!!";
+        } else if(day === 0 && hours >= 12 && hours < 18) {
+        document.getElementById("text").innerHTML = "Mam nadzieję że sobie dzisiaj odpoczełąś księżniczko";
+        } else if(day === 0 && hours >= 18 && hours < 24) {
+        document.getElementById("text").innerHTML = "Mam nadzieję że w tym tygodniu też się spotkamy, kocham Cię śpij spokojnie skarbie <3";
+        } else if(day === 1 && hours >= 0 && hours < 12) {
+        document.getElementById("text").innerHTML = "To pewnie będzie ciężki poranek w poniedziałek ale to nie problem dla mojej księżniczki <3";
+        } else if(day === 1 && hours >= 12 && hours < 18) {
+        document.getElementById("text").innerHTML = "Hihihihihih koniec szkółki odpocznij sobie kochanie";
+        } else if(day === 1 && hours >= 18 && hours < 24) {
+        document.getElementById("text").innerHTML = "Wiem że to był ciężki dzień dlatego lepiej szybciej się dzisiaj połóż do łóżeczka";
+        } else if(day === 2 && hours >= 0 && hours < 12) {
+        document.getElementById("text").innerHTML = "Hejcia powodzonka do szkółki już wtoreczek ;33";
+        } else if(day === 2 && hours >= 12 && hours < 18) {
+        document.getElementById("text").innerHTML = "Wtorek przeżyty essunia ;)";
+        } else if(day === 2 && hours >= 18 && hours < 24) {
+        document.getElementById("text").innerHTML = "Mam nadzieje że wszystko w porządeczku kochanie moje";
+        } else if(day === 3 && hours >= 0 && hours < 12) {
+        document.getElementById("text").innerHTML = "Jest środa rano a ja Cię giga kocham";
+        } else if(day === 3 && hours >= 12 && hours < 18) {
+        document.getElementById("text").innerHTML = "Mam nadzieję że się dzisiaj widzimi hihihihhi <3";
+        } else if(day === 3 && hours >= 18 && hours < 24) {
+        document.getElementById("text").innerHTML = "Jesteś moim słoneczkiem ukochanym";
+        } else if(day === 4 && hours >= 0 && hours < 12) {
+        document.getElementById("text").innerHTML = "Mam nadzieję że zjadłaś smaczne śniadanko hihihii";
+        } else if(day === 4 && hours >= 12 && hours < 18) {
+        document.getElementById("text").innerHTML = "Coraz bliżej weekendu to sobię odpoczniesz pysiu mój";
+        } else if(day === 4 && hours >= 18 && hours < 24) {
+        document.getElementById("text").innerHTML = "Miłego wieczorku skarbeńku <3";
+        } else if(day === 5 && hours >= 0 && hours < 12) {
+        document.getElementById("text").innerHTML = "Coraz bliżej odpoczynku hihihihi";
+        } else if(day === 5 && hours >= 12 && hours < 18) {
+        document.getElementById("text").innerHTML = "Essa <3";
+        } else if(day === 5 && hours >= 18 && hours < 24) {
+        document.getElementById("text").innerHTML = "Już możesz sobię wychillować kochanie moje";
+        } else if(day === 6 && hours >= 0 && hours < 12) {
+        document.getElementById("text").innerHTML = "Mam nadzieję że tego nie czytasz tylko sobie smacznie śpisz skarbie";
+        } else if(day === 6 && hours >= 12 && hours < 18) {
+        document.getElementById("text").innerHTML = "Dzisiaj odpoczywamy <3";
+        } else if(day === 6 && hours >= 18 && hours < 24) {
+        document.getElementById("text").innerHTML = "Porozmawiamy sobie? hihihihhi";
+        } 
+
+        var clockDiv = document.getElementById('zegar');
+        clockDiv.innerText = dni[day] + " " + hours + ":" + minutes + ":" + seconds;
+        }, 1000);
+
+    </script>
+</body>
+</html>
